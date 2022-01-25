@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_home_navigation"
+    app:startDestination="@id/adminHomeFragment">
+
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="com.satan.estyonetim.adminhomeviews.AdminHomeFragment"
+        android:label="Yönetici Paneli"
+        tools:layout="@layout/fragment_admin_home" >
+        <action
+            android:id="@+id/action_adminHomeFragment_to_publishAnnouncementFragment"
+            app:destination="@id/publishAnnouncementFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_displayPersonalFragmentt"
+            app:destination="@id/displayPersonalFragmentt" />
+    </fragment>
+    <fragment
+        android:id="@+id/displayPersonalFragmentt"
+        android:name="com.satan.estyonetim.adminhomeviews.DisplayPersonalFragment"
+        android:label="Personel görüntüleme"
+        tools:layout="@layout/fragment_display_personal" >
+        <action
+            android:id="@+id/action_displayPersonalFragmentt_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/publishAnnouncementFragment"
+        android:name="com.satan.estyonetim.adminhomeviews.PublishAnnouncementFragment"
+        android:label="Duyuru yayınlama"
+        tools:layout="@layout/fragment_publish_announcement" >
+        <action
+            android:id="@+id/action_publishAnnouncementFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+    </fragment>
+</navigation>

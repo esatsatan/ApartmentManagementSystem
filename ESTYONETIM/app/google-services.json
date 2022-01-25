@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "344521966578",
+    "project_id": "estyonetim-1bb61",
+    "storage_bucket": "estyonetim-1bb61.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344521966578:android:93b12f882f83b54f22a16b",
+        "android_client_info": {
+          "package_name": "com.satan.estyonetim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344521966578-glh311p75vg27jvu3cmgnlhnkak4jdmi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoHfZ7EMtvCyX0FbV1jYoPKneY60TwXF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344521966578-glh311p75vg27jvu3cmgnlhnkak4jdmi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
