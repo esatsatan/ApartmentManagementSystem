@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">ESTYONETIM</string>
+    <string name="y_netici_giri_i">Yönetici Girişi</string>
+    <string name="yonetici_girisi">yonetici_girisi</string>
+    <string name="email">Email</string>
+    <string name="sifre">Sifre</string>
+    <string name="giri_yap">Giriş Yap</string>
+    <string name="email_giriniz">Email giriniz</string>
+    <string name="sifre_giriniz">Sifre giriniz</string>
+    <string name="kayit_ol">Kayit ol</string>
+    <string name="hesabiniz_var_mi">Hesabiniz var mi ?</string>
+    <string name="giris_yapin">Giris yapin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string-array name="blok">
+        <item>A BLOK </item>
+        <item>B BLOK</item>
+        <item>C BLOK</item>
+
+    </string-array>
+
+
+</resources>

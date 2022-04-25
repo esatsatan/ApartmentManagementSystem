@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notification_row"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:padding="10dp">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/admin_image"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="@color/design_default_color_primary"
+            app:civ_border_width="1dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/recycler_row_subject_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:text=" KONU :"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/recycler_row_subject"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:textStyle="bold"
+                            android:text=" Havuz temizliği"
+                            android:textSize="17sp" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/recycler_row_description_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text=" AÇIKLAMA :"
+                    android:textSize="17sp"
+                    android:layout_marginTop="2dp"
+                    android:textStyle="bold" />
+
+                <ScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/recycler_row_description_article"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:text=" Merhaba bugün sizlere bir açıklama yapacağım"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                </ScrollView>
+
+                <TextView
+                    android:id="@+id/recycler_row_timeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20.12 "
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="240dp"
+                    android:layout_marginTop="40dp"/>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

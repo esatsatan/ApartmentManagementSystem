@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".homeviews.PaymentActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/credit_card"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="İsim soyisim :"
+            android:textSize="18sp"
+            android:layout_marginStart="5dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/paymentUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="İsim Soyisim giriniz"
+            android:textSize="18sp"
+            android:layout_marginStart="5dp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blok numarası:"
+            android:textSize="18sp"
+            android:layout_marginStart="5dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/paymentUserApartmentNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Blok numaranızı giriniz"
+            android:textSize="18sp"
+            android:layout_marginStart="5dp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daire numarası:"
+            android:textSize="18sp"
+            android:layout_marginStart="5dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/paymentUserRoomNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Daire numaranızı giriniz"
+            android:textSize="18sp"
+            android:layout_marginStart="5dp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/payButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:background="@color/teal_700"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="italic"
+        android:text="Ödeme yap"/>
+
+
+
+
+
+</LinearLayout>

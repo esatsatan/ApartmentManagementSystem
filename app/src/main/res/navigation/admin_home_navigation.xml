@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_home_navigation"
+    app:startDestination="@id/adminHomeFragment">
+
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="com.satan.estyonetim.adminhomeviews.AdminHomeFragment"
+        android:label="Yönetici Paneli"
+        tools:layout="@layout/fragment_admin_home" >
+        <action
+            android:id="@+id/action_adminHomeFragment_to_publishAnnouncementFragment"
+            app:destination="@id/publishAnnouncementFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_displayPersonalFragmentt"
+            app:destination="@id/displayPersonalFragmentt" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_adminChatFragment"
+            app:destination="@id/adminChatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/displayPersonalFragmentt"
+        android:name="com.satan.estyonetim.adminhomeviews.DisplayPersonalFragment"
+        android:label="Personel görüntüleme"
+        tools:layout="@layout/fragment_display_personal" >
+        <action
+            android:id="@+id/action_displayPersonalFragmentt_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+        <action
+            android:id="@+id/action_displayPersonalFragmentt_to_addStaffFragment"
+            app:destination="@id/addStaffFragment" />
+        <action
+            android:id="@+id/action_displayPersonalFragmentt_to_staffDetailFragment"
+            app:destination="@id/staffDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/publishAnnouncementFragment"
+        android:name="com.satan.estyonetim.adminhomeviews.PublishAnnouncementFragment"
+        android:label="Duyuru yayınlama"
+        tools:layout="@layout/fragment_publish_announcement" >
+        <action
+            android:id="@+id/action_publishAnnouncementFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+        <action
+            android:id="@+id/action_publishAnnouncementFragment_to_createAnnouncementFragment"
+            app:destination="@id/createAnnouncementFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAnnouncementFragment"
+        android:name="com.satan.estyonetim.adminhomeviews.CreateAnnouncementFragment"
+        android:label="DUYURU YAYINLA"
+        tools:layout="@layout/fragment_create_announcement">
+        <action
+            android:id="@+id/action_createAnnouncementFragment_to_publishAnnouncementFragment"
+            app:destination="@id/publishAnnouncementFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/staffDetailFragment"
+        android:name="com.satan.estyonetim.adminhomeviews.StaffDetailFragment"
+        android:label="fragment_staff_detail"
+        tools:layout="@layout/fragment_staff_detail" >
+        <action
+            android:id="@+id/action_staffDetailFragment_to_displayPersonalFragmentt"
+            app:destination="@id/displayPersonalFragmentt" />
+        <argument
+            android:name="argsName"
+            app:argType="string" />
+        <argument
+            android:name="argsPosition"
+            app:argType="string" />
+        <argument
+            android:name="argsIdentity"
+            app:argType="string" />
+        <argument
+            android:name="argsSalary"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/addStaffFragment"
+        android:name="com.satan.estyonetim.adminhomeviews.AddStaffFragment"
+        android:label="fragment_add_staff"
+        tools:layout="@layout/fragment_add_staff" >
+        <action
+            android:id="@+id/action_addStaffFragment_to_displayPersonalFragmentt"
+            app:destination="@id/displayPersonalFragmentt" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminChatFragment"
+        android:name="com.satan.estyonetim.adminhomeviews.AdminChatFragment"
+        android:label="Mesajlaşma"
+        tools:layout="@layout/fragment_admin_chat" >
+        <action
+            android:id="@+id/action_adminChatFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "344521966578",
+    "firebase_url": "https://estyonetim-1bb61-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "estyonetim-1bb61",
+    "storage_bucket": "estyonetim-1bb61.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344521966578:android:93b12f882f83b54f22a16b",
+        "android_client_info": {
+          "package_name": "com.satan.estyonetim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344521966578-ugqi4ahv54i13lee4681tgjprp15fvur.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.satan.estyonetim",
+            "certificate_hash": "9a45924894b4387f59142fa153c4f06f34227b11"
+          }
+        },
+        {
+          "client_id": "344521966578-glh311p75vg27jvu3cmgnlhnkak4jdmi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoHfZ7EMtvCyX0FbV1jYoPKneY60TwXF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344521966578-glh311p75vg27jvu3cmgnlhnkak4jdmi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

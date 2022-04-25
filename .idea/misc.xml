@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/drawable/custom_button.xml" value="0.2703125" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/drawable/custom_view.xml" value="0.2703125" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/drawable/ic__delete.xml" value="0.2703125" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/drawable/ic_person.xml" value="0.2703125" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/drawable/ic_security.xml" value="0.2388888888888889" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/drawable/message_box_background.xml" value="0.2703125" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_admin_home.xml" value="0.2341485507246377" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_admin_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_home_page.xml" value="0.2" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_login_activityy.xml" value="0.23020833333333332" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_payment.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_reset_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_signup.xml" value="0.1621376811594203" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_splash.xml" value="0.23007246376811594" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_user_info.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/add_personal_row.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/admin_annonunce_row.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/admin_chat_row.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/admin_dropdown_item.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/admin_home_recycler_row.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/chat_row.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_add_broken.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_add_staff.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_admin_chat.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_admin_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_create_announcement.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_damage_notificate.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_display_personal.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_payment.xml" value="0.25181159420289856" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_payment_detail.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_publish_announcement.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_reset_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_staff.xml" value="0.2509057971014493" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_staff_detail.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/homerecyclerview_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/navigation_header.xml" value="0.4" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/payment_detail_row.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/receive_text_row.xml" value="0.24365942028985507" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/admin_add_staff.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/admin_bottom_navigation_menu.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/admin_options_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/navigation_menu.xml" value="0.4" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/user_add_broken.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/user_bottom_navigation_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/user_navigation_menu.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

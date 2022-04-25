@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:id="@+id/recycler_item_row"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/admin_image"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:clickable="true"
+        android:layout_marginEnd="10dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_margin="15dp"
+        android:focusable="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="İsim :"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/staff_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ESAT SATAN"
+            android:textSize="15sp"
+            android:layout_marginStart="80dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Görev :"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/staff_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Güvenlik görevlisi"
+            android:textAllCaps="true"
+            android:textSize="15sp"
+            android:layout_marginStart="80dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tc kimlik no:"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/staff_identityNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="65779884569"
+            android:textAlignment="center"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Maaş"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/staff_salary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5000 TL"
+            android:textAlignment="center"
+            android:textSize="15sp"/>
+
+</LinearLayout>
+
+</LinearLayout>

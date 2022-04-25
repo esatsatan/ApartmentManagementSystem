@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/nav_fitness"
+        android:icon="@drawable/ic_fitness_center"
+        android:title="Fitness Randevusu"/>
+
+    <item
+        android:id="@+id/nav_trash"
+        android:icon="@drawable/ic__delete"
+        android:title="Delete"/>
+
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings"/>
+
+
+    <item
+        android:title="Profile">
+
+        <menu>
+
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@drawable/ic_login"
+                android:title="Login"/>
+
+        </menu>
+
+    </item>
+
+    <item android:title="Site İşlemleri">
+
+        <menu>
+
+            <item android:id="@+id/nav_pay"
+                  android:icon="@drawable/ic_baseline_payment_24"
+                  android:title="Ödeme"/>
+
+            <item android:id="@+id/nav_rate_us"
+                  android:icon="@drawable/ic__rate_review"
+                  android:title="Rate us"/>
+
+
+
+
+        </menu>
+
+    </item>
+
+
+
+
+
+
+
+
+
+
+</menu>

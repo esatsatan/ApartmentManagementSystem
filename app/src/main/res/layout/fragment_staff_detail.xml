@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".adminhomeviews.StaffDetailFragment">
+
+    <ImageView
+        android:id="@+id/staff_detail_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:minHeight="200dp"
+        android:padding="10dp"
+        android:src="@drawable/select_image"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/staff_detail_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="ESAT SATAN"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:padding="10dp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/staff_detail_position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="GÜVENLİK GÖREVLİSİ"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:padding="10dp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/staff_detail_identityNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="45879444595"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:padding="10dp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/staff_detail_salary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="5000 TL"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:padding="10dp"
+        android:layout_margin="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/staff_delete_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PERSONEL SİL"
+        android:textStyle="bold"
+        android:padding="18dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+
+
+
+
+</LinearLayout>
