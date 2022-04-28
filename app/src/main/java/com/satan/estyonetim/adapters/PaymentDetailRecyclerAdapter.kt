@@ -26,8 +26,6 @@ class PaymentDetailRecyclerAdapter(var paymentInformation : ArrayList<PaymentAtt
         holder.binding.paymentRoomNo.text = paymentInformation[position].roomNo
         holder.binding.paymentDetailPayTime.text = paymentInformation[position].time
 
-        holder.binding.paymentDetailPayStatus.text = "Ödendi"
-
     }
 
     override fun getItemCount(): Int {
