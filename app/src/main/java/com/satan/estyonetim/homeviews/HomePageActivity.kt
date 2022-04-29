@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -15,6 +16,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.satan.estyonetim.R
 import com.satan.estyonetim.databinding.ActivityHomePageBinding
@@ -30,6 +33,7 @@ class HomePageActivity : AppCompatActivity() {
      lateinit var view : View
 
      private lateinit var sharedPreferences: SharedPreferences
+     private lateinit var database : FirebaseFirestore
 
      
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +42,8 @@ class HomePageActivity : AppCompatActivity() {
         binding = ActivityHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        auth = Firebase.auth    // initialize
+        auth = Firebase.auth  // initialize
+        database = Firebase.firestore
         checkCurrentUser()
 
         // bottom navigation bar setups
@@ -69,18 +74,41 @@ class HomePageActivity : AppCompatActivity() {
                   R.id.nav_pay -> startActivity(Intent(this,PaymentActivity::class.java))  // go payment page
 
 
+
               }
               true
           }
-
-
-
-
 
     }
 
      private fun getSharedPreferencesData() {
 
+         val viewHeader = binding.navigationView.getHeaderView(0) // access navigationview header values
+         val navViewHeaderBinding : NavigationHeaderBinding = NavigationHeaderBinding.bind(viewHeader)
+
+         val userEmail = auth.currentUser!!.email.toString()
+
+         database.collection("UsersInfo").document(userEmail).get()
+             .addOnSuccessListener {  document ->
+                 if (document != null) {
+
+                     val userName = document.get("name") as String
+                     val phoneNumber = document.get("phoneNumber") as String
+                     val apartmentNumber = document.get("apartmentNumber") as String
+                     val roomNumber = document.get("roomNumber") as String
+
+                     navViewHeaderBinding.loggedUserName.text = userName
+                     navViewHeaderBinding.loggedUserPhone.text = phoneNumber
+                     navViewHeaderBinding.blockNumber.text = apartmentNumber
+                     navViewHeaderBinding.roomNumber.text = roomNumber
+                 }
+
+             }
+             .addOnFailureListener {
+                Toast.makeText(applicationContext," Hata ! veri alınamadı : ${it.localizedMessage}",Toast.LENGTH_SHORT).show()
+             }
+
+/*
          val viewHeader = binding.navigationView.getHeaderView(0) // access navigationview header values
          val navViewHeaderBinding : NavigationHeaderBinding = NavigationHeaderBinding.bind(viewHeader)
          // bind navHeader with view binding and access variables.
@@ -98,6 +126,7 @@ class HomePageActivity : AppCompatActivity() {
         val savedRoomNo = sharedPreferences.getString("STRING_ROOM","")
          navViewHeaderBinding.roomNumber.text = savedRoomNo
 
+*/
      }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

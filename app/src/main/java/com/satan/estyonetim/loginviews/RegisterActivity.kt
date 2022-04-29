@@ -12,17 +12,19 @@ import android.util.Patterns
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.satan.estyonetim.databinding.ActivityRegisterBinding
+import com.satan.estyonetim.model.LoggedUsers
+import com.satan.estyonetim.model.User
 
 
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var auth : FirebaseAuth
-
-    val database = Firebase.firestore
+    private lateinit var database : FirebaseFirestore
 
     private lateinit var sharedPreferences: SharedPreferences
 
@@ -42,6 +44,7 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = Firebase.auth    // initialize authentication
+        database = Firebase.firestore
 
         sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
 
@@ -72,15 +75,9 @@ class RegisterActivity : AppCompatActivity() {
                         Toast.makeText(applicationContext,"Kayıt başarılı.. ${auth.currentUser!!.email} adresine doğrulama linki gönderildi  ",
                             Toast.LENGTH_LONG).show()
 
-                        val usersMap = hashMapOf<String,Any>()
-                        usersMap["user_email"] = userEmail
-                        usersMap["user_password"] = userPassword
-                        usersMap["user_name"] = nameSurname
-                        usersMap["user_phone"] = phoneNumber
-                        usersMap["user_apartNo"] = apartmentNumber
-                        usersMap["user_roomNo"] = roomNumber
+                        val users = LoggedUsers(userEmail,userPassword,nameSurname,phoneNumber,apartmentNumber,roomNumber)
 
-                        database.collection("UsersInfo").add(usersMap).addOnCompleteListener {
+                        database.collection("UsersInfo").document(auth.currentUser!!.email!!).set(users).addOnCompleteListener {
                             if (it.isSuccessful) {
                                Toast.makeText(applicationContext,"Kullanıcı oluşturuldu",Toast.LENGTH_SHORT).show()
                                 saveDataWithSharedPreferences()
@@ -152,6 +149,17 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun saveDataWithSharedPreferences() {
 
+        val name = binding.inputRegisterName.text.toString()
+        val phoneNumber = binding.inputRegisterPhoneNumber.text.toString()
+
+
+
+
+
+
+
+/*
+
         val username : String = binding.inputRegisterName.text.toString()
         val phoneNumber : String = binding.inputRegisterPhoneNumber.text.toString()
         val apartmentNumber : String = binding.inputRegisterApartmentNumber.text.toString()
@@ -167,15 +175,10 @@ class RegisterActivity : AppCompatActivity() {
         }.apply()
 
         Toast.makeText(applicationContext,"Sharedpreferences a Kaydedildi",Toast.LENGTH_SHORT).show()
+*/
+
+
     }
-
-
-
-
-
-
-
-
 
 
 }

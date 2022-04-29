@@ -68,17 +68,17 @@ class AdminHomeFragment : Fragment() {
 
                 if(adapterView?.getItemAtPosition(position) == customList[0]){
 
-                    database.collection("UsersInfo").whereEqualTo("user_apartNo","A BLOK")
+                    database.collection("UsersInfo").whereEqualTo("apartmentNumber","A BLOK")
                         .get().addOnSuccessListener { documents ->
                                 if (!documents.isEmpty) {
 
                                     userList.clear()
 
                                     for (document in documents) {
-                                        val userName = document.get("user_name") as String
-                                        val userApartNo = document.get("user_apartNo") as String
-                                        val userPhone = document.get("user_phone") as String
-                                        val userRoomNo = document.get("user_roomNo") as String
+                                        val userName = document.get("name") as String
+                                        val userApartNo = document.get("apartmentNumber") as String
+                                        val userPhone = document.get("phoneNumber") as String
+                                        val userRoomNo = document.get("roomNumber") as String
 
                                         val userDetails = User(userName,userApartNo,userPhone,userRoomNo)
                                         userList.add(userDetails)
@@ -94,17 +94,17 @@ class AdminHomeFragment : Fragment() {
 
                 } else if (adapterView!!.selectedItem.toString().equals("B BLOK")){
 
-                    database.collection("UsersInfo").whereEqualTo("user_apartNo","B BLOK")
+                    database.collection("UsersInfo").whereEqualTo("apartmentNumber","B BLOK")
                         .get().addOnSuccessListener { documents ->
                             if (!documents.isEmpty) {
 
                                 userList.clear()
 
                                 for (document in documents) {
-                                    val userName = document.get("user_name") as String
-                                    val userApartNo = document.get("user_apartNo") as String
-                                    val userPhone = document.get("user_phone") as String
-                                    val userRoomNo = document.get("user_roomNo") as String
+                                    val userName = document.get("name") as String
+                                    val userApartNo = document.get("apartmentNumber") as String
+                                    val userPhone = document.get("phoneNumber") as String
+                                    val userRoomNo = document.get("roomNumber") as String
 
                                     val userDetails = User(userName,userApartNo,userPhone,userRoomNo)
                                     userList.add(userDetails)
@@ -125,17 +125,17 @@ class AdminHomeFragment : Fragment() {
 
                 } else if (adapterView.selectedItem.toString().equals("C BLOK")) {
 
-                    database.collection("UsersInfo").whereEqualTo("user_apartNo","C BLOK")
+                    database.collection("UsersInfo").whereEqualTo("apartmentNumber","C BLOK")
                         .get().addOnSuccessListener { documents ->
                             if (!documents.isEmpty) {
 
                                 userList.clear()
 
                                 for (document in documents) {
-                                    val userName = document.get("user_name") as String
-                                    val userApartNo = document.get("user_apartNo") as String
-                                    val userPhone = document.get("user_phone") as String
-                                    val userRoomNo = document.get("user_roomNo") as String
+                                    val userName = document.get("name") as String
+                                    val userApartNo = document.get("apartmentNumber") as String
+                                    val userPhone = document.get("phoneNumber") as String
+                                    val userRoomNo = document.get("roomNumber") as String
 
                                     val userDetails = User(userName,userApartNo,userPhone,userRoomNo)
                                     userList.add(userDetails)
@@ -152,17 +152,17 @@ class AdminHomeFragment : Fragment() {
                 }
                 else if (adapterView.selectedItem.toString().equals("D BLOK")) {
 
-                    database.collection("UsersInfo").whereEqualTo("user_apartNo","D BLOK")
+                    database.collection("UsersInfo").whereEqualTo("apartmentNumber","D BLOK")
                         .get().addOnSuccessListener { documents ->
                             if (!documents.isEmpty) {
 
                                 userList.clear()
 
                                 for (document in documents) {
-                                    val userName = document.get("user_name") as String
-                                    val userApartNo = document.get("user_apartNo") as String
-                                    val userPhone = document.get("user_phone") as String
-                                    val userRoomNo = document.get("user_roomNo") as String
+                                    val userName = document.get("name") as String
+                                    val userApartNo = document.get("apartmentNumber") as String
+                                    val userPhone = document.get("phoneNumber") as String
+                                    val userRoomNo = document.get("roomNumber") as String
 
                                     val userDetails = User(userName,userApartNo,userPhone,userRoomNo)
                                     userList.add(userDetails)

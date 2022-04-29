@@ -19,9 +19,9 @@
         android:title="Delete"/>
 
     <item
-        android:id="@+id/nav_settings"
-        android:icon="@drawable/ic_settings"
-        android:title="Settings"/>
+        android:id="@+id/nav_basketball"
+        android:icon="@drawable/ic_sports_basketball"
+        android:title="Basketbol Maçları"/>
 
 
     <item
@@ -46,9 +46,9 @@
                   android:icon="@drawable/ic_baseline_payment_24"
                   android:title="Ödeme"/>
 
-            <item android:id="@+id/nav_rate_us"
-                  android:icon="@drawable/ic__rate_review"
-                  android:title="Rate us"/>
+            <item android:id="@+id/nav_settings"
+                  android:icon="@drawable/ic_settings"
+                  android:title="Ayarlar"/>
 
 
 

@@ -36,7 +36,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="20dp"
             android:text="Daire No : "
             android:textSize="15sp"
             android:textStyle="bold" />
@@ -45,7 +45,7 @@
             android:id="@+id/roomNumber"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:text="25"
             android:textSize="15sp" />
 
