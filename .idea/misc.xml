@@ -14,9 +14,10 @@
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_home_page.xml" value="0.2" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_login_activityy.xml" value="0.23020833333333332" />
-        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_payment.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_payment.xml" value="0.4" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_reset_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_settings.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_signup.xml" value="0.1621376811594203" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_splash.xml" value="0.23007246376811594" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_user_info.xml" value="0.25416666666666665" />
@@ -45,6 +46,7 @@
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/navigation_header.xml" value="0.1" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/payment_detail_row.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/receive_text_row.xml" value="0.24365942028985507" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/user_settings_dropdown_item.xml" value="0.25416666666666665" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/admin_add_staff.xml" value="0.25416666666666665" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/admin_bottom_navigation_menu.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/admin_options_menu.xml" value="0.25416666666666665" />

@@ -1,8 +1,6 @@
 package com.satan.estyonetim.homeviews
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -32,7 +30,6 @@ class HomePageActivity : AppCompatActivity() {
      private lateinit var toggle : ActionBarDrawerToggle
      lateinit var view : View
 
-     private lateinit var sharedPreferences: SharedPreferences
      private lateinit var database : FirebaseFirestore
 
      
@@ -56,9 +53,7 @@ class HomePageActivity : AppCompatActivity() {
 
 
 
-        sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
-
-        getSharedPreferencesData()
+        getUserInformationFromDatabase()
 
         toggle = ActionBarDrawerToggle(this,binding.drawerLayout, R.string.open,R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
@@ -73,6 +68,7 @@ class HomePageActivity : AppCompatActivity() {
 
                   R.id.nav_pay -> startActivity(Intent(this,PaymentActivity::class.java))  // go payment page
 
+                  R.id.nav_settings -> startActivity(Intent(this,SettingsActivity::class.java))
 
 
               }
@@ -81,7 +77,7 @@ class HomePageActivity : AppCompatActivity() {
 
     }
 
-     private fun getSharedPreferencesData() {
+     private fun getUserInformationFromDatabase() {
 
          val viewHeader = binding.navigationView.getHeaderView(0) // access navigationview header values
          val navViewHeaderBinding : NavigationHeaderBinding = NavigationHeaderBinding.bind(viewHeader)

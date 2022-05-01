@@ -23,5 +23,13 @@
 
     </string-array>
 
+    <string-array name="settings">
+        <item>Isim degisikligi </item>
+        <item>Telefon degisikligi</item>
+        <item>Blok degisikligi</item>
+        <item>Daire degisikligi</item>
+
+    </string-array>
+
 
 </resources>

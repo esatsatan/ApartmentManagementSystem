@@ -153,11 +153,6 @@ class RegisterActivity : AppCompatActivity() {
         val phoneNumber = binding.inputRegisterPhoneNumber.text.toString()
 
 
-
-
-
-
-
 /*
 
         val username : String = binding.inputRegisterName.text.toString()

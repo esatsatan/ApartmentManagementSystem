@@ -87,7 +87,7 @@ class AdminHomeFragment : Fragment() {
                                     adminHomeRecyclerAdapter.notifyDataSetChanged()
 
                                 } else {
-                                    Toast.makeText(requireContext(),"C blokta oturan kimse yok !",Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(requireContext(),"A blokta oturan kimse yok !",Toast.LENGTH_SHORT).show()
                                 }
 
                         }
@@ -171,7 +171,7 @@ class AdminHomeFragment : Fragment() {
                                 adminHomeRecyclerAdapter.notifyDataSetChanged()
 
                             } else {
-                                Toast.makeText(requireContext(),"C blokta oturan kimse yok !",Toast.LENGTH_SHORT).show()
+                                Toast.makeText(requireContext(),"D blokta oturan kimse yok !",Toast.LENGTH_SHORT).show()
                             }
 
                         }
