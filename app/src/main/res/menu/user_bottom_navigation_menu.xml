@@ -13,4 +13,8 @@
           android:id="@+id/ChatFragment"
           android:icon="@drawable/ic_broken"/>
 
+    <item android:title="Fitness"
+          android:id="@+id/fitnessFragment"
+        android:icon="@drawable/ic_fitness_center"/>
+
 </menu>

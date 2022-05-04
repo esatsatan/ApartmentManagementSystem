@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ESTYONETIM">
         <activity
+            android:name=".homeviews.CreateFitnessAppointmentActivity"
+            android:exported="false" />
+        <activity
             android:name=".homeviews.SettingsActivity"
             android:exported="false" />
         <activity

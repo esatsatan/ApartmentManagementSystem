@@ -52,7 +52,6 @@ class HomePageActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(navController)
 
 
-
         getUserInformationFromDatabase()
 
         toggle = ActionBarDrawerToggle(this,binding.drawerLayout, R.string.open,R.string.close)
@@ -69,6 +68,8 @@ class HomePageActivity : AppCompatActivity() {
                   R.id.nav_pay -> startActivity(Intent(this,PaymentActivity::class.java))  // go payment page
 
                   R.id.nav_settings -> startActivity(Intent(this,SettingsActivity::class.java))
+
+                  R.id.nav_fitness -> startActivity(Intent(this,CreateFitnessAppointmentActivity::class.java))
 
 
               }

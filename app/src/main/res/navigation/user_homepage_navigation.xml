@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_paymentFragment2"
             app:destination="@id/paymenttFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_fitnessFragment"
+            app:destination="@id/fitnessFragment" />
     </fragment>
     <fragment
         android:id="@+id/ChatFragment"
@@ -46,5 +49,14 @@
         <action
             android:id="@+id/action_addBrokenFragment_to_ChatFragment"
             app:destination="@id/ChatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fitnessFragment"
+        android:name="com.satan.estyonetim.homefragmentviews.FitnessFragment"
+        android:label="Fitness Randevusu"
+        tools:layout="@layout/fragment_fitness" >
+        <action
+            android:id="@+id/action_fitnessFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

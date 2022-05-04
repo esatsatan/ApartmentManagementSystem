@@ -7,8 +7,10 @@ import com.satan.estyonetim.databinding.PaymentDetailRowBinding
 import com.satan.estyonetim.model.PaymentAttributes
 import java.util.ArrayList
 
-class PaymentDetailRecyclerAdapter(var paymentInformation : ArrayList<PaymentAttributes>) :
+class PaymentDetailRecyclerAdapter :
     RecyclerView.Adapter<PaymentDetailRecyclerAdapter.PaymentDetailViewHolder>() {
+
+    private var paymentInformation = emptyList<PaymentAttributes>() // create empty list
 
     class PaymentDetailViewHolder(val binding : PaymentDetailRowBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -31,6 +33,13 @@ class PaymentDetailRecyclerAdapter(var paymentInformation : ArrayList<PaymentAtt
     override fun getItemCount(): Int {
         return paymentInformation.size
     }
+
+    fun getSqliteData(payment : List<PaymentAttributes>) {
+        this.paymentInformation = payment
+        notifyDataSetChanged()
+    }
+
+
 
 
 }

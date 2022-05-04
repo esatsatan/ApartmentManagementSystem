@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -16,6 +18,7 @@ import com.google.firebase.ktx.Firebase
 import com.satan.estyonetim.adapters.PaymentDetailRecyclerAdapter
 import com.satan.estyonetim.databinding.FragmentPaymentDetailBinding
 import com.satan.estyonetim.model.PaymentAttributes
+import com.satan.estyonetim.utils.PaymentViewModel
 import java.util.ArrayList
 
 
@@ -25,9 +28,10 @@ class PaymentDetailFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var database : FirebaseFirestore
     private lateinit var auth : FirebaseAuth
-    private lateinit var paymentDetailRecyclerAdapter : PaymentDetailRecyclerAdapter
 
-     var paymentDetails = ArrayList<PaymentAttributes>()
+    private lateinit var paymentDetailRecyclerAdapter : PaymentDetailRecyclerAdapter
+    private lateinit var rPaymentViewModel : PaymentViewModel
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?):
             View{
@@ -38,47 +42,25 @@ class PaymentDetailFragment : Fragment() {
         database = Firebase.firestore
         auth = Firebase.auth
 
+        // initialize viewModel
+        rPaymentViewModel = ViewModelProvider(this)[PaymentViewModel::class.java]
+
 
         // bind layout manager
         val layoutManager = LinearLayoutManager(requireContext())
         binding.paymentDetailRecyclerView.layoutManager = layoutManager
         // bind adapters
-        paymentDetailRecyclerAdapter = PaymentDetailRecyclerAdapter(paymentDetails)
+        paymentDetailRecyclerAdapter = PaymentDetailRecyclerAdapter()
         binding.paymentDetailRecyclerView.adapter = paymentDetailRecyclerAdapter
 
-        getPaymentInformation()
+
+        // get and show data from sqlite database
+        rPaymentViewModel.readAllData.observe(viewLifecycleOwner) { user ->
+            paymentDetailRecyclerAdapter.getSqliteData(user)
+        }
 
         return binding.root
     }
-
-
-    private fun getPaymentInformation() {
-
-        database.collection("PaymentSubscription").orderBy("time",Query.Direction.DESCENDING).get().addOnSuccessListener {
-
-
-            if (it != null) {
-
-                paymentDetails.clear()
-
-                for (document in it) {
-                    val name = document.get("payName") as String
-                    val date = document.get("time") as String
-                    val apartNo = document.get("apartNo") as String
-                    val roomNo = document.get("roomNo") as String
-
-                    val getInformation = PaymentAttributes(name,apartNo,roomNo,date)
-                    paymentDetails.add(getInformation)
-                }
-                paymentDetailRecyclerAdapter.notifyDataSetChanged()
-            }
-        }
-            .addOnFailureListener {
-                Toast.makeText(requireContext(),"hata : ${it.localizedMessage}",Toast.LENGTH_SHORT).show()
-            }
-
-    }
-
 
 
     override fun onDestroy() {
