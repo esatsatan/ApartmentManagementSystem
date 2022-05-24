@@ -21,5 +21,9 @@
          android:id="@+id/adminChatFragment"
           android:icon="@drawable/ic_message"/>
 
+    <item android:title="Basketbol"
+          android:id="@+id/createBasketballGameFragment"
+          android:icon="@drawable/ic_sports_basketball"/>
+
 
 </menu>

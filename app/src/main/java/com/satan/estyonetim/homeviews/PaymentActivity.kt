@@ -3,6 +3,7 @@ package com.satan.estyonetim.homeviews
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.Timestamp
@@ -10,12 +11,12 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.satan.estyonetim.databinding.ActivityPaymentBinding
-import com.satan.estyonetim.loginviews.LoginActivity
 import com.satan.estyonetim.model.PaymentAttributes
 import com.satan.estyonetim.utils.PaymentViewModel
-import java.time.LocalDateTime
+import java.text.DateFormat
+import java.util.*
 
-class PaymentActivity : AppCompatActivity() {
+class PaymentActivity : AppCompatActivity()  {
 
     private lateinit var database : FirebaseFirestore
     private lateinit var binding : ActivityPaymentBinding
@@ -36,7 +37,6 @@ class PaymentActivity : AppCompatActivity() {
         }
 
 
-
     }
 
     private fun savePaymentInformation() {
@@ -44,11 +44,13 @@ class PaymentActivity : AppCompatActivity() {
         val name = binding.paymentUserName.text.toString()
         val apartmentNumber = binding.paymentUserApartmentNo.text.toString()
         val roomNumber = binding.paymentUserRoomNumber.text.toString()
-        val time = Timestamp.now().toDate().toString()
+        val time = Calendar.getInstance().time
 
-        val addData = PaymentAttributes(0,name,apartmentNumber,roomNumber, time)
+        val formattedDate = DateFormat.getDateInstance(DateFormat.DEFAULT).format(time)
 
-        if (name.isNotEmpty() && apartmentNumber.isNotEmpty() && roomNumber.isNotEmpty() && time.isNotEmpty()) {
+        val addData = PaymentAttributes(0,name,apartmentNumber,roomNumber, formattedDate)
+
+        if (name.isNotEmpty() && apartmentNumber.isNotEmpty() && roomNumber.isNotEmpty()) {
 
             database.collection("PaymentSubscription").document().set(addData)
                 .addOnCompleteListener {

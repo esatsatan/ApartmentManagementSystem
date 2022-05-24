@@ -4,10 +4,14 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.google.protobuf.Empty
 import com.satan.estyonetim.databinding.FitnessDetailRowBinding
 import com.satan.estyonetim.model.Fitness
+import com.satan.estyonetim.model.PaymentAttributes
 
-class FitnessDetailRecyclerAdapter(var getData : ArrayList<Fitness>) : RecyclerView.Adapter<FitnessDetailRecyclerAdapter.FitnessViewHolder>() {
+class FitnessDetailRecyclerAdapter : RecyclerView.Adapter<FitnessDetailRecyclerAdapter.FitnessViewHolder>() {
+
+    var getData = ArrayList<Fitness>()
 
     class FitnessViewHolder(val binding : FitnessDetailRowBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -26,7 +30,14 @@ class FitnessDetailRecyclerAdapter(var getData : ArrayList<Fitness>) : RecyclerV
         holder.binding.fitnessDetailStatus.text = "Yapildi"
     }
 
-    override fun getItemCount(): Int {
-        return getData.size
+    override fun getItemCount(): Int{
+            return getData.size
     }
+
+    fun getFitnessData(fitness: ArrayList<Fitness>) {
+        this.getData = fitness
+        notifyDataSetChanged()
+    }
+
+
 }

@@ -55,9 +55,6 @@ class CreateAnnouncementFragment : Fragment() {
         val time = Timestamp.now()
 
 
-
-        val uuid = UUID.randomUUID()
-
         if (title.isNotEmpty() && description.isNotEmpty()) {
 
             val postHashMap = hashMapOf<String ,Any>()

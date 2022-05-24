@@ -72,6 +72,8 @@ class HomePageActivity : AppCompatActivity() {
                   R.id.nav_fitness -> startActivity(Intent(this,CreateFitnessAppointmentActivity::class.java))
 
 
+
+
               }
               true
           }
@@ -105,25 +107,6 @@ class HomePageActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext," Hata ! veri alınamadı : ${it.localizedMessage}",Toast.LENGTH_SHORT).show()
              }
 
-/*
-         val viewHeader = binding.navigationView.getHeaderView(0) // access navigationview header values
-         val navViewHeaderBinding : NavigationHeaderBinding = NavigationHeaderBinding.bind(viewHeader)
-         // bind navHeader with view binding and access variables.
-
-
-         val savedName = sharedPreferences.getString("STRING_USERNAME","")
-         navViewHeaderBinding.loggedUserName.text = savedName
-
-         val savedPhone = sharedPreferences.getString("STRING_PHONE","")
-         navViewHeaderBinding.loggedUserPhone.text = savedPhone
-
-         val savedApartNo = sharedPreferences.getString("STRING_APART","")
-         navViewHeaderBinding.blockNumber.text = savedApartNo
-
-        val savedRoomNo = sharedPreferences.getString("STRING_ROOM","")
-         navViewHeaderBinding.roomNumber.text = savedRoomNo
-
-*/
      }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

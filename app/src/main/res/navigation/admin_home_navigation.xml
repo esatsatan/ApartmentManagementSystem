@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_adminHomeFragment_to_adminChatFragment"
             app:destination="@id/adminChatFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_createBasketballGameFragment"
+            app:destination="@id/createBasketballGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/displayPersonalFragmentt"
@@ -93,6 +96,15 @@
         tools:layout="@layout/fragment_admin_chat" >
         <action
             android:id="@+id/action_adminChatFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createBasketballGameFragment"
+        android:name="com.satan.estyonetim.adminhomeviews.CreateBasketballGameFragment"
+        android:label="fragment_create_basketball_game"
+        tools:layout="@layout/fragment_create_basketball_game" >
+        <action
+            android:id="@+id/action_createBasketballGameFragment_to_adminHomeFragment"
             app:destination="@id/adminHomeFragment" />
     </fragment>
 </navigation>

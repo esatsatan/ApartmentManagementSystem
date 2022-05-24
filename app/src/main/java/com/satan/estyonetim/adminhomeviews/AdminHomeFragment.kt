@@ -1,25 +1,24 @@
 package com.satan.estyonetim.adminhomeviews
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Query
-import com.google.firebase.firestore.core.QueryListener
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.satan.estyonetim.R
 import com.satan.estyonetim.adapters.AdminHomePageRecyclerAdapter
+import com.satan.estyonetim.adapters.AdminHomePaymentsRecyclerAdapter
 import com.satan.estyonetim.databinding.FragmentAdminHomeBinding
-import com.satan.estyonetim.loginviews.LoginActivity
+import com.satan.estyonetim.model.PaymentAttributes
 import com.satan.estyonetim.model.User
-import java.util.ArrayList
+import kotlin.collections.ArrayList
 
 
 class AdminHomeFragment : Fragment() {
@@ -28,8 +27,10 @@ class AdminHomeFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var database : FirebaseFirestore
     private lateinit var adminHomeRecyclerAdapter : AdminHomePageRecyclerAdapter
+    private lateinit var paymentSubscriptionRecyclerAdapter : AdminHomePaymentsRecyclerAdapter
 
     var userList = ArrayList<User>()
+    var paymentList = ArrayList<PaymentAttributes>()
 
     
     override fun onCreateView(
@@ -39,20 +40,99 @@ class AdminHomeFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentAdminHomeBinding.inflate(inflater,container,false)
 
+
+        // initialize database
         database = Firebase.firestore
 
+        // connection userList recyclerView with admin Home page
         val layoutManager = LinearLayoutManager(requireContext())
         binding.adminHomePageRecyclerView.layoutManager = layoutManager
 
         adminHomeRecyclerAdapter = AdminHomePageRecyclerAdapter(userList)
         binding.adminHomePageRecyclerView.adapter = adminHomeRecyclerAdapter
 
+        // bind payment detail recyclerView to admin Home page
+        val paymentLayoutManager = LinearLayoutManager(requireContext())
+        binding.paymentSubscriptionRecyclerView.layoutManager = paymentLayoutManager
+
+        paymentSubscriptionRecyclerAdapter = AdminHomePaymentsRecyclerAdapter(paymentList)
+        binding.paymentSubscriptionRecyclerView.adapter = paymentSubscriptionRecyclerAdapter
+
+
         spinnerItemSelected()
+        getPaymentData()
 
-
-
+        searchUser()
 
         return binding.root
+
+    }
+
+    private fun searchUser() {
+        binding.adminHomeSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return if (query != null) {
+                    searchDataFromFirebase(query)
+                    true
+                } else {
+                    getPaymentData()
+                    true
+                }
+            }
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+               return true
+            }
+
+        })
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun searchDataFromFirebase(query : String) {
+        database.collection("PaymentSubscription").whereEqualTo("apartNo",query)
+            .get().addOnSuccessListener { documents ->
+
+                paymentList.clear()
+
+                for (document in documents.documents) {
+                    val getUserName = document.get("payName").toString()
+                    val getApartNo = document.get("apartNo").toString()
+                    val getRoomNo = document.get("roomNo").toString()
+                    val getTime = document.get("time").toString()
+
+                    val data = PaymentAttributes(1,getUserName,getApartNo,getRoomNo,getTime)
+                    paymentList.add(data)
+                }
+                paymentSubscriptionRecyclerAdapter.notifyDataSetChanged()
+            }
+            .addOnFailureListener {
+                Toast.makeText(requireContext(),"Hata : ${it.localizedMessage}",Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun getPaymentData() {
+        database.collection("PaymentSubscription").addSnapshotListener { snapshot, error ->
+            if (error == null) {
+                if (snapshot != null) {
+
+                    paymentList.clear()
+
+                   for (document in snapshot.documents) {
+                       val getUserName = document.get("payName").toString()
+                       val getApartNo = document.get("apartNo").toString()
+                       val getRoomNo = document.get("roomNo").toString()
+                       val getTime = document.get("time").toString()
+
+                       val saveData = PaymentAttributes(1,getUserName,getApartNo,getRoomNo,getTime)
+                       paymentList.add(saveData)
+                   }
+                    paymentSubscriptionRecyclerAdapter.notifyDataSetChanged()
+                }
+            } else {
+                Toast.makeText(requireContext(),"Veri alınamadı ! (${error.localizedMessage})",Toast.LENGTH_SHORT).show()
+            }
+        }
 
     }
 
@@ -64,6 +144,7 @@ class AdminHomeFragment : Fragment() {
 
         binding.adminHomeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
+            @SuppressLint("NotifyDataSetChanged")
             override fun onItemSelected(adapterView: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
 
                 if(adapterView?.getItemAtPosition(position) == customList[0]){
@@ -185,11 +266,6 @@ class AdminHomeFragment : Fragment() {
 
         }
     }
-
-
-
-
-
 
     override fun onDestroy() {
         super.onDestroy()

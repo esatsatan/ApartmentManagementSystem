@@ -41,7 +41,6 @@ class AddStaffFragment : Fragment() ,EasyPermissions.PermissionCallbacks {
             if (hasGalleryPermision()) {
                 // izin alındı yapılacak işlemler ..
 
-
             } else {
                 // izin alınmadı
                 requestGalleryPermission()

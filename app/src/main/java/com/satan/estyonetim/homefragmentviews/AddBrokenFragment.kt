@@ -169,6 +169,7 @@ class AddBrokenFragment : Fragment() {
                     val email = auth.currentUser!!.email.toString()
                     val comment = binding.CreateChatMessageText.text.toString()
                     val time = Timestamp.now().toDate().toString()
+
                     // save image url to database
                     val saveData = ChatMessage(comment,email,downloadUrl,time,auth.uid.toString())
 

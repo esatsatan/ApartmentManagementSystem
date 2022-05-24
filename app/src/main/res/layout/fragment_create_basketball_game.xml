@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".adminhomeviews.CreateBasketballGameFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:text="Maç Oluşturma"
+        android:textSize="20sp"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:layout_margin="10dp"
+        android:padding="20dp"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_weight="2.5"
+        android:scaleType="centerCrop"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:src="@mipmap/ic_launcher"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Düzenleyen"
+                android:textSize="13sp"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="esatsatan91@gmail.com"
+                android:textSize="13sp"
+                android:layout_marginStart="5dp"
+                android:padding="3dp"
+                android:textStyle="italic"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tarih Seçiniz :"
+                android:textSize="13sp"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:textStyle="bold"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/selectDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="seç"
+                android:textSize="13sp"
+                android:layout_marginStart="5dp"
+                android:padding="3dp"
+                android:textStyle="italic"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Takım :"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/totalPersonCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="Toplam kişi sayısı"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/selectedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="18sp"
+            android:text="10-05-2022 15.00 pm"
+            android:layout_marginTop="10dp"
+            android:textStyle="italic"
+            android:textAlignment="center"/>
+
+
+
+    </LinearLayout>
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/createBasketballButton"
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:layout_marginBottom="5dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="OLUŞTUR"
+        android:textStyle="bold"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"/>
+
+
+</LinearLayout>

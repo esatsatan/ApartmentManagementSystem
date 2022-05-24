@@ -9,8 +9,10 @@
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/drawable/ic_person.xml" value="0.2703125" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/drawable/ic_security.xml" value="0.2388888888888889" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/drawable/message_box_background.xml" value="0.2703125" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/drawable/shape_searchview.xml" value="0.15" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_admin_home.xml" value="0.2341485507246377" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_admin_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_basketball.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_create_fitness_appointment.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_home_page.xml" value="0.2" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/activity_login.xml" value="0.264" />
@@ -27,17 +29,21 @@
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/admin_chat_row.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/admin_dropdown_item.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/admin_home_recycler_row.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/basketball_activity_row.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/chat_row.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fitness_detail_row.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_add_broken.xml" value="0.25416666666666665" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_add_staff.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_admin_chat.xml" value="0.264" />
-        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_admin_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_admin_home.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_create_announcement.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_create_basket_activity.xml" value="0.25" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_create_basketball_game.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_create_payment.xml" value="0.25" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_damage_notificate.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_display_personal.xml" value="0.25416666666666665" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_fitness.xml" value="0.25416666666666665" />
-        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_payment.xml" value="0.25181159420289856" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_payment_detail.xml" value="0.264" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/fragment_publish_announcement.xml" value="0.264" />
@@ -52,6 +58,7 @@
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/layout/user_settings_dropdown_item.xml" value="0.25416666666666665" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/admin_add_staff.xml" value="0.25416666666666665" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/admin_bottom_navigation_menu.xml" value="0.264" />
+        <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/admin_create_subscriptionpayment.xml" value="0.24895833333333334" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/admin_options_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/AdvancedLevelAndroid/ESTYONETIM/app/src/main/res/menu/navigation_menu.xml" value="0.4" />

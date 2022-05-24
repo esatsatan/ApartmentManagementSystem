@@ -1,5 +1,6 @@
 package com.satan.estyonetim.homefragmentviews
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
 import android.widget.SearchView
@@ -45,8 +46,10 @@ class FitnessFragment : Fragment() ,SearchView.OnQueryTextListener {
         val layoutManager = LinearLayoutManager(requireContext())
         binding.fitnessRecyclerAdapter.layoutManager = layoutManager
 
-        fitnessRecyclerAdapter = FitnessDetailRecyclerAdapter(fitnessList)
+        fitnessRecyclerAdapter = FitnessDetailRecyclerAdapter()
         binding.fitnessRecyclerAdapter.adapter = fitnessRecyclerAdapter
+
+        fitnessRecyclerAdapter.getFitnessData(fitnessList)
 
         getAppointmentData()
 
@@ -64,13 +67,14 @@ class FitnessFragment : Fragment() ,SearchView.OnQueryTextListener {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun getAppointmentData() {
 
         database.collection("fitnessAppointment").orderBy("appointmentHour",Query.Direction.ASCENDING).get()
             .addOnSuccessListener { results->
                 if (results != null) {
 
-                    for (result in results){
+                    for (result in results) {
                         val name = result.get("userName") as String
                         val day = result.get("appointmentDay") as String
                         val hour = result.get("appointmentHour") as String
@@ -93,20 +97,43 @@ class FitnessFragment : Fragment() ,SearchView.OnQueryTextListener {
 
 
     override fun onQueryTextSubmit(query: String?): Boolean {
-        if(query != null) {
+        return if(query != null) {
             searchDatabase(query)
+            true
+        } else {
+            false
+        }
+
+    }
+
+    override fun onQueryTextChange(text: String?): Boolean {
+        if (text != null) {
+            searchDatabase(text)
         }
         return true
     }
 
-    override fun onQueryTextChange(p0: String?): Boolean {
-
-      return true
-    }
-
     private fun searchDatabase(query : String) {
 
+        fitnessList.clear()
 
+        database.collection("fitnessAppointment").whereEqualTo("appointmentHour",query).get()
+            .addOnSuccessListener { documents->
+                for (document in documents) {
+                    val hour = document.get("appointmentHour") as String
+                    val minute = document.get("appointmentMinute") as String
+                    val day = document.get("appointmentDay") as String
+                    val name = document.get("userName") as String
+
+                    val data = Fitness(name,hour, minute,day,"yapildi")
+
+                    fitnessList.add(data)
+                    fitnessRecyclerAdapter.getFitnessData(fitnessList)
+                }
+            }
+            .addOnFailureListener {
+                Toast.makeText(requireContext(),"Veri alınamadı !!",Toast.LENGTH_SHORT).show()
+            }
     }
 
     override fun onDestroy() {

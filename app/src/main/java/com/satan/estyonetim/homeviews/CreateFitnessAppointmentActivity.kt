@@ -122,6 +122,10 @@ class CreateFitnessAppointmentActivity : AppCompatActivity() {
             }
     }
 
+    private fun getUserPhoto() {
+
+    }
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun createNotification() {

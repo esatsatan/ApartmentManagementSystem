@@ -80,7 +80,6 @@ class RegisterActivity : AppCompatActivity() {
                         database.collection("UsersInfo").document(auth.currentUser!!.email!!).set(users).addOnCompleteListener {
                             if (it.isSuccessful) {
                                Toast.makeText(applicationContext,"Kullanıcı oluşturuldu",Toast.LENGTH_SHORT).show()
-                                saveDataWithSharedPreferences()
                                 startActivity(Intent(this,LoginActivity::class.java))
                                 finish()
 
@@ -145,36 +144,6 @@ class RegisterActivity : AppCompatActivity() {
         }
 
     }
-
-
-    private fun saveDataWithSharedPreferences() {
-
-        val name = binding.inputRegisterName.text.toString()
-        val phoneNumber = binding.inputRegisterPhoneNumber.text.toString()
-
-
-/*
-
-        val username : String = binding.inputRegisterName.text.toString()
-        val phoneNumber : String = binding.inputRegisterPhoneNumber.text.toString()
-        val apartmentNumber : String = binding.inputRegisterApartmentNumber.text.toString()
-        val roomNumber : String = binding.inputRegisterRoomNumber.text.toString()
-
-
-        val editor : SharedPreferences.Editor = sharedPreferences.edit()
-        editor.apply {
-            putString("STRING_USERNAME",username)
-            putString("STRING_PHONE",phoneNumber)
-            putString("STRING_APART",apartmentNumber)
-            putString("STRING_ROOM",roomNumber)
-        }.apply()
-
-        Toast.makeText(applicationContext,"Sharedpreferences a Kaydedildi",Toast.LENGTH_SHORT).show()
-*/
-
-
-    }
-
 
 }
 
