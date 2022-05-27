@@ -1,6 +1,7 @@
 package com.satan.estyonetim.homefragmentviews
 
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -58,6 +59,7 @@ class DamageNotificateFragment : Fragment() {
     fun getSnapshotData() {
         reference.child("Chats").orderByChild("time")
             .addValueEventListener(object : ValueEventListener {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 chatMessages.clear()

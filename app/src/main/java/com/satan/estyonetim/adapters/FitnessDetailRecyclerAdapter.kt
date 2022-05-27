@@ -8,6 +8,7 @@ import com.google.protobuf.Empty
 import com.satan.estyonetim.databinding.FitnessDetailRowBinding
 import com.satan.estyonetim.model.Fitness
 import com.satan.estyonetim.model.PaymentAttributes
+import com.squareup.picasso.Picasso
 
 class FitnessDetailRecyclerAdapter : RecyclerView.Adapter<FitnessDetailRecyclerAdapter.FitnessViewHolder>() {
 
@@ -28,12 +29,17 @@ class FitnessDetailRecyclerAdapter : RecyclerView.Adapter<FitnessDetailRecyclerA
         holder.binding.fitnessDetailDate.text = "Gün =${getData[position].appointmentDay} Saat = ${getData[position].appointmentHour} : " +
                 "${getData[position].appointmentMinute} "
         holder.binding.fitnessDetailStatus.text = "Yapildi"
+
+        Picasso.get().load(getData[position].photoUrl).into(holder.binding.fitnessDetailUserPhoto)
+
+
     }
 
     override fun getItemCount(): Int{
             return getData.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun getFitnessData(fitness: ArrayList<Fitness>) {
         this.getData = fitness
         notifyDataSetChanged()

@@ -80,8 +80,9 @@ class FitnessFragment : Fragment() ,SearchView.OnQueryTextListener {
                         val hour = result.get("appointmentHour") as String
                         val minute = result.get("appointmentMinute") as String
                         val status = result.get("status") as String
+                        val photoUrl = result.get("photoUrl") as String
 
-                        val getData = Fitness(name,hour,minute,day,status)
+                        val getData = Fitness(name,hour,minute,day,status,photoUrl)
                         fitnessList.add(getData)
                         Toast.makeText(requireContext(),"Veriler alındı",Toast.LENGTH_SHORT).show()
                     }
@@ -125,7 +126,7 @@ class FitnessFragment : Fragment() ,SearchView.OnQueryTextListener {
                     val day = document.get("appointmentDay") as String
                     val name = document.get("userName") as String
 
-                    val data = Fitness(name,hour, minute,day,"yapildi")
+                    val data = Fitness(name,hour, minute,day,"yapildi","null")
 
                     fitnessList.add(data)
                     fitnessRecyclerAdapter.getFitnessData(fitnessList)

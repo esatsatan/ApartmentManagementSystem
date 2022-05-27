@@ -28,7 +28,6 @@ class ChatRecyclerAdapter(var messages : ArrayList<ChatMessage> ) :
         // set image to imageview using picasso library
         Picasso.get().load(messages[position].photoUrl).into(holder.binding.selectedImage)
 
-
     }
 
     override fun getItemCount(): Int {

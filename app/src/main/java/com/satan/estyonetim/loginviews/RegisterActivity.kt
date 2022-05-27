@@ -1,7 +1,5 @@
 package com.satan.estyonetim.loginviews
 
-
-
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -53,9 +51,6 @@ class RegisterActivity : AppCompatActivity() {
             validateRegisterData()
         }
 
-
-
-
     }
 
     private fun registerUser() {
@@ -75,7 +70,7 @@ class RegisterActivity : AppCompatActivity() {
                         Toast.makeText(applicationContext,"Kayıt başarılı.. ${auth.currentUser!!.email} adresine doğrulama linki gönderildi  ",
                             Toast.LENGTH_LONG).show()
 
-                        val users = LoggedUsers(userEmail,userPassword,nameSurname,phoneNumber,apartmentNumber,roomNumber)
+                        val users = LoggedUsers(userEmail,userPassword,nameSurname,phoneNumber,apartmentNumber,roomNumber,"null")
 
                         database.collection("UsersInfo").document(auth.currentUser!!.email!!).set(users).addOnCompleteListener {
                             if (it.isSuccessful) {

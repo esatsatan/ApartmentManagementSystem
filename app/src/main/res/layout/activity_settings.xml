@@ -8,13 +8,30 @@
     android:orientation="vertical"
     tools:context=".homeviews.SettingsActivity">
 
-    <ImageView
-        android:id="@+id/settingsImageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@mipmap/ic_launcher"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="30dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/settingsImageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/saveProfilePhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:layout_marginLeft="20dp"
+            android:textStyle="italic"
+            android:text="Fotoğrafı kaydet"
+            android:layout_marginRight="20dp"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_marginTop="20dp"

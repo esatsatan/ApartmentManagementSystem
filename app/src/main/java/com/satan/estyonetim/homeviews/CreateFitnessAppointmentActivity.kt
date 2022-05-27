@@ -110,20 +110,18 @@ class CreateFitnessAppointmentActivity : AppCompatActivity() {
 
     private fun saveToDatabase() {
 
-        val name = binding.userName.text.toString()
-        val fitness = Fitness(name,selectedHour!!,selectedMinute!!,selectedDay!!,"yapildi")
 
-        database.collection("fitnessAppointment").add(fitness)
+        val currentUser = auth.currentUser!!.email.toString()
+        val name = binding.userName.text.toString()
+        val fitness = Fitness(name,selectedHour!!,selectedMinute!!,selectedDay!!,"yapılacak","null")
+
+        database.collection("fitnessAppointment").document(currentUser).set(fitness)
             .addOnCompleteListener {
                 Toast.makeText(applicationContext,"Saved to database",Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener {
                 Toast.makeText(applicationContext,"Failed to save  database !!",Toast.LENGTH_SHORT).show()
             }
-    }
-
-    private fun getUserPhoto() {
-
     }
 
 

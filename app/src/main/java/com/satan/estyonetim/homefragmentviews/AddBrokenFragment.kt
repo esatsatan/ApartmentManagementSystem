@@ -132,9 +132,8 @@ class AddBrokenFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == GALLERY_REQUEST_CODE && resultCode == Activity.RESULT_OK && data != null ) {
-            //       val bitmap = data?.extras?.get("data") as Bitmap
 
-                selectedImage = data.data
+            selectedImage = data.data
 
             if (selectedImage != null) {
 
@@ -149,8 +148,6 @@ class AddBrokenFragment : Fragment() {
             }
 
         }
-
-
     }
 
     private fun savePhotoToStorage() {
@@ -165,6 +162,8 @@ class AddBrokenFragment : Fragment() {
             imageReference.putFile(selectedImage!!).addOnSuccessListener {
                 val uploadedImage = FirebaseStorage.getInstance().reference.child("images").child(imageName)
                 uploadedImage.downloadUrl.addOnSuccessListener { uri ->
+
+
                     val downloadUrl = uri.toString()
                     val email = auth.currentUser!!.email.toString()
                     val comment = binding.CreateChatMessageText.text.toString()

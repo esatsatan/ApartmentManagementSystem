@@ -5,4 +5,5 @@ class LoggedUsers(var email : String,
                   var name : String,
                   var phoneNumber  :String,
                   var apartmentNumber : String,
-                  var roomNumber : String,)
+                  var roomNumber : String,
+                  var photoUrl : String)
