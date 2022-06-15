@@ -60,9 +60,15 @@ class HomeFragment : Fragment() {
                     val activityMinute = documents.get("gameMinute").toString()
                     val organizer = documents.get("organizer").toString()
                     val personCount = documents.get("personCount").toString()
+                    val getGameStatus = documents.get("gameStatus").toString()
+                    val getGameType = documents.get("gamePhotoUrl").toString()
 
-                    val getData = Basketball(organizer,activityDay,activityHour,activityMinute,personCount,currentPersonCount)
-                    getBasketballDatas.add(getData)
+                    val getData = Basketball(organizer,
+                                            activityDay,
+                                            activityHour,
+                                            activityMinute,
+                                            personCount,currentPersonCount,getGameStatus,getGameType)
+                                            getBasketballDatas.add(getData)
 
                 }
                 basketBallRecyclerAdapter.notifyDataSetChanged()
@@ -70,10 +76,6 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireContext(),"Hata ! veri getirilemedi : $error",Toast.LENGTH_SHORT).show()
             }
         }
-
-    }
-
-    private fun searchData() {
 
     }
 

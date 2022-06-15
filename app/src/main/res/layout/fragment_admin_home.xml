@@ -41,6 +41,7 @@
             android:padding="5dp"
             android:layout_height="50dp" />
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/paymentSubscriptionRecyclerView"
             android:layout_width="match_parent"

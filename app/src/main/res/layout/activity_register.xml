@@ -191,8 +191,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="150dp"
-            android:text="@string/hesabiniz_var_mi"
+            android:layout_marginStart="125dp"
+            android:text="Hesabınız var mı ? "
             android:textColor="@color/white"
             android:textSize="15sp" />
 

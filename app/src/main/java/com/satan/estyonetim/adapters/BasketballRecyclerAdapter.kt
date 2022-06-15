@@ -9,6 +9,7 @@ import com.google.firebase.ktx.Firebase
 import com.satan.estyonetim.adminhomeviews.CreateBasketballGameFragment.Companion.currentPersonCount
 import com.satan.estyonetim.databinding.BasketballActivityRowBinding
 import com.satan.estyonetim.model.Basketball
+import com.squareup.picasso.Picasso
 
 class BasketballRecyclerAdapter(var activityList : ArrayList<Basketball> ) :
     RecyclerView.Adapter<BasketballRecyclerAdapter.BasketballViewHolder>() {
@@ -31,6 +32,10 @@ class BasketballRecyclerAdapter(var activityList : ArrayList<Basketball> ) :
         holder.binding.activityTime.text = "${activityList[position].gameHour} : ${activityList[position].gameMinute}"
         holder.binding.totalPerson.text = activityList[position].personCount
         holder.binding.currentPersonCount.text = currentPersonCount.toString()
+        holder.binding.activityStatus.text = activityList[position].gameStatus
+
+        Picasso.get().load(activityList[position].gamePhotoUrl).into(holder.binding.basketballTypeImage)
+
 
         val toJoinCheckBox = holder.binding.toJoinActivityCheckBox
         val quitCheckBox = holder.binding.quitActivityCheckBox

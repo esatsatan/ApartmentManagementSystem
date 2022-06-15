@@ -32,6 +32,7 @@ class PublishAnnounceRecyclerAdapter(private val postList: ArrayList<Admin>)
 
         holder.binding.recyclerRowSubject.text = postList[position].title
         holder.binding.recyclerRowDescriptionArticle.text = postList[position].description
+        holder.binding.announceTimeText.text = postList[position].date
 
     }
 

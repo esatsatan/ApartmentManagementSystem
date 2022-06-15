@@ -6,4 +6,6 @@ package com.satan.estyonetim.model
     val gameHour : String,
     val gameMinute : String,
     val personCount : String,
-    val currentPersonCount : Int)
+    val currentPersonCount : Int,
+    val gameStatus : String,
+    val gamePhotoUrl : String,)

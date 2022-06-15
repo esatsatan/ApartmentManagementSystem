@@ -14,17 +14,6 @@
         android:title="Fitness Randevusu"/>
 
     <item
-        android:id="@+id/nav_trash"
-        android:icon="@drawable/ic__delete"
-        android:title="Delete"/>
-
-    <item
-        android:id="@+id/nav_basketball"
-        android:icon="@drawable/ic_sports_basketball"
-        android:title="Basketbol Maçları"/>
-
-
-    <item
         android:title="Profile">
 
         <menu>
@@ -32,7 +21,7 @@
             <item
                 android:id="@+id/nav_login"
                 android:icon="@drawable/ic_login"
-                android:title="Login"/>
+                android:title="Giriş ekranı"/>
 
         </menu>
 

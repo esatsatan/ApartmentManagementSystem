@@ -3,6 +3,9 @@ package com.satan.estyonetim.adminhomeviews
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,17 +14,17 @@ import android.view.ViewGroup
 import android.widget.DatePicker
 import android.widget.TimePicker
 import android.widget.Toast
-import androidx.core.graphics.blue
-import androidx.core.graphics.red
-import androidx.core.graphics.toColor
+import androidx.activity.result.contract.ActivityResultContracts
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.satan.estyonetim.R
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.ktx.storage
 import com.satan.estyonetim.databinding.FragmentCreateBasketballGameBinding
 import com.satan.estyonetim.model.Basketball
+import com.squareup.picasso.Picasso
 import java.util.*
 
 
@@ -31,6 +34,11 @@ class CreateBasketballGameFragment : Fragment(),DatePickerDialog.OnDateSetListen
     private val binding get() = _binding!!
     private lateinit var database : FirebaseFirestore
     private lateinit var auth : FirebaseAuth
+    private lateinit var storage : FirebaseStorage
+
+    var imageUri : Uri? = null
+    var selectedBitmap : Bitmap? = null
+    var photoURL : String = ""
 
     companion object {
         var currentPersonCount = 0
@@ -58,11 +66,33 @@ class CreateBasketballGameFragment : Fragment(),DatePickerDialog.OnDateSetListen
 
         database = Firebase.firestore
         auth = Firebase.auth
+        storage = Firebase.storage
+
+        binding.organizer.text = auth.currentUser!!.email.toString()
 
         pickData()
 
         binding.createBasketballButton.setOnClickListener {
             createBasketballActivity()
+        }
+
+        // go to gallery
+        val resultLauncher = registerForActivityResult(
+            ActivityResultContracts.GetContent()
+        ) {
+
+            binding.selectGameType.setImageURI(it)
+            imageUri = it
+
+            if(imageUri != null) {
+                Picasso.get().load(it).into(binding.selectGameType)
+
+            }
+
+        }
+
+        binding.selectGameType.setOnClickListener {
+            resultLauncher.launch("image/*")
         }
 
 
@@ -78,20 +108,50 @@ class CreateBasketballGameFragment : Fragment(),DatePickerDialog.OnDateSetListen
         val organizer = auth.currentUser!!.email.toString()
         val totalPersonCount = binding.totalPersonCount.text.toString()
 
-        val basketball = Basketball(organizer,gameDay,gameHour,gameMinute,totalPersonCount,
-            currentPersonCount)
+        selectGameType(gameDay,gameHour,gameMinute,organizer,totalPersonCount)
 
-        database.collection("BasketballActivity").document().set(basketball)
-            .addOnCompleteListener {
-                if (it.isSuccessful) {
-                    Toast.makeText(requireContext(),"Veriler kaydedildi",Toast.LENGTH_SHORT).show()
 
+
+    }
+
+    private fun selectGameType(day : String ,hour : String ,minute : String ,organizer : String , totalPerson : String) {
+
+        val uuid = UUID.randomUUID()
+        val imageName = "${uuid}.jpg"
+
+        val reference = storage.reference
+        val imageReference = reference.child("activityTypePhoto").child(imageName)
+        if (imageUri != null) {
+            imageReference.putFile(imageUri!!).addOnSuccessListener {
+                val uploadedImage = FirebaseStorage.getInstance().reference.child("activityTypePhoto").child(imageName)
+                uploadedImage.downloadUrl.addOnSuccessListener { uri ->
+
+                    val downloadUrl = uri.toString()
+
+                    val basketball = Basketball(organizer,
+                        day,hour,minute,totalPerson, currentPersonCount,"yapılacak",downloadUrl)
+
+                    database.collection("BasketballActivity").document().set(basketball)
+                        .addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                Toast.makeText(requireContext(),"Veriler kaydedildi",Toast.LENGTH_SHORT).show()
+
+                            }
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(requireContext(),"Başarısız işlem : ${it.localizedMessage}",Toast.LENGTH_SHORT).show()
+                        }
                 }
+                    .addOnFailureListener {
+                        Toast.makeText(requireContext(),"Hata ! url indirilemedi : ${it.localizedMessage}",
+                            Toast.LENGTH_SHORT).show()
+                    }
             }
-            .addOnFailureListener {
-                Toast.makeText(requireContext(),"Başarısız işlem : ${it.localizedMessage}",Toast.LENGTH_SHORT).show()
-            }
-
+                .addOnFailureListener {
+                    Toast.makeText(requireContext(),"Hata ! dosya yüklenemedi : ${it.localizedMessage}",
+                    Toast.LENGTH_SHORT).show()
+                }
+        }
 
     }
 

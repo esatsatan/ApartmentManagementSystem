@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
-        android:text="Giriş Yap"
+        android:text="ESTYONETIM"
         android:textColor="@color/white"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -93,7 +93,7 @@
         android:layout_marginBottom="18dp"
         android:clickable="true"
         android:focusable="true"
-        android:text="Şifreiniz mi unuttunuz? "
+        android:text="Şifrenizi mi unuttunuz? "
         android:textColor="@color/white"
         android:textSize="13sp"
         android:textStyle="bold"
@@ -120,7 +120,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="150dp"
-            android:text="Hesabınız yok mu ? "
+            android:text="Hesabınız yok mu? "
             android:textColor="@color/white"
             android:textSize="15sp" />
 
@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
-            android:text="Kayıt olun"
+            android:text="Kaydolun"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -141,15 +141,6 @@
 
     </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/loginProgressBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="60dp"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="@+id/loginLinearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/loginLinearLayout" />
 
     <TextView
         android:id="@+id/textView2"
@@ -161,7 +152,6 @@
         android:text="Yönetici misiniz?"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/loginProgressBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginLinearLayout"
         app:layout_constraintVertical_bias="0.0" />
@@ -170,16 +160,15 @@
         android:id="@+id/toAdminLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
+        android:layout_marginStart="17dp"
         android:layout_marginTop="27dp"
         android:layout_marginEnd="108dp"
         android:layout_marginBottom="14dp"
         android:clickable="true"
         android:focusable="true"
-        android:text="Giriş yapın"
+        android:text="  Giriş yapın"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/loginProgressBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/loginLinearLayout" />

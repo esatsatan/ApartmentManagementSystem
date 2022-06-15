@@ -62,7 +62,7 @@
     <fragment
         android:id="@+id/staffDetailFragment"
         android:name="com.satan.estyonetim.adminhomeviews.StaffDetailFragment"
-        android:label="fragment_staff_detail"
+        android:label="Personel detay"
         tools:layout="@layout/fragment_staff_detail" >
         <action
             android:id="@+id/action_staffDetailFragment_to_displayPersonalFragmentt"
@@ -83,7 +83,7 @@
     <fragment
         android:id="@+id/addStaffFragment"
         android:name="com.satan.estyonetim.adminhomeviews.AddStaffFragment"
-        android:label="fragment_add_staff"
+        android:label="Personel ekle"
         tools:layout="@layout/fragment_add_staff" >
         <action
             android:id="@+id/action_addStaffFragment_to_displayPersonalFragmentt"
@@ -101,7 +101,7 @@
     <fragment
         android:id="@+id/createBasketballGameFragment"
         android:name="com.satan.estyonetim.adminhomeviews.CreateBasketballGameFragment"
-        android:label="fragment_create_basketball_game"
+        android:label="Basketbol turnuvası"
         tools:layout="@layout/fragment_create_basketball_game" >
         <action
             android:id="@+id/action_createBasketballGameFragment_to_adminHomeFragment"

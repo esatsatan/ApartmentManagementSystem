@@ -12,6 +12,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.satan.estyonetim.databinding.FragmentCreateAnnouncementBinding
+import java.text.DateFormat
 import java.time.LocalDateTime
 import java.util.*
 
@@ -52,7 +53,8 @@ class CreateAnnouncementFragment : Fragment() {
 
         val title = binding.titleText.text.toString()
         val description = binding.descriptionText.text.toString()
-        val time = Timestamp.now()
+        val currentTime = Calendar.getInstance().time
+        val formattedDate = DateFormat.getInstance().format(currentTime)
 
 
         if (title.isNotEmpty() && description.isNotEmpty()) {
@@ -60,7 +62,8 @@ class CreateAnnouncementFragment : Fragment() {
             val postHashMap = hashMapOf<String ,Any>()
             postHashMap["title"] = title
             postHashMap.put("description",description)
-            postHashMap.put("time",time)
+            postHashMap.put("time",formattedDate)
+
 
             database.collection("Notifications").add(postHashMap).addOnCompleteListener {
                 if (it.isSuccessful) {

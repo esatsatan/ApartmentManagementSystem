@@ -88,8 +88,9 @@ class PublishAnnouncementFragment : Fragment() {
                        for (document in documents) {
                            val descriptionTitle = document.get("title") as String
                            val description = document.get("description") as String
+                           val getTime = document.get("time") as String
 
-                           val posts = Admin(descriptionTitle,description)
+                           val posts = Admin(descriptionTitle,description,getTime)
                            postList.add(posts)
 
                        }

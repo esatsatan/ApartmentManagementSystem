@@ -7,9 +7,6 @@
        android:id="@+id/admin_logout_button"
        android:title="Çıkış Yap"/>
 
-   <item android:id="@+id/admin_set_payment"
-       tools:ignore="MenuTitle"
-       app:showAsAction="ifRoom"
-       android:icon="@drawable/ic_baseline_payment_24"/>
+
 
 </menu>

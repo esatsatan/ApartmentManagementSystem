@@ -79,14 +79,14 @@
                 </ScrollView>
 
                 <TextView
-                    android:id="@+id/recycler_row_timeText"
+                    android:id="@+id/announce_time_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="20.12 "
                     android:textSize="15sp"
                     android:textStyle="bold"
-                    android:layout_marginStart="240dp"
-                    android:layout_marginTop="40dp"/>
+                    android:layout_marginStart="200dp"
+                    android:layout_marginTop="20dp"/>
 
 
 

@@ -44,7 +44,7 @@
     <fragment
         android:id="@+id/addBrokenFragment"
         android:name="com.satan.estyonetim.homefragmentviews.AddBrokenFragment"
-        android:label="fragment_add_broken"
+        android:label="Arıza oluşturma"
         tools:layout="@layout/fragment_add_broken" >
         <action
             android:id="@+id/action_addBrokenFragment_to_ChatFragment"

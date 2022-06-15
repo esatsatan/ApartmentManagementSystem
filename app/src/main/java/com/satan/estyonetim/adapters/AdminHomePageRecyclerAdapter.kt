@@ -30,9 +30,6 @@ class AdminHomePageRecyclerAdapter(var getUsers : ArrayList<User>) :
         holder.binding.adminHomeRecyclerUserPhone.text = getUsers[position].userPhone
         holder.binding.adminHomeRecyclerUserRoomNo.text = getUsers[position].userRoomNo
 
-        holder.binding.deleteUserButton.setOnClickListener {
-
-        }
     }
 
 

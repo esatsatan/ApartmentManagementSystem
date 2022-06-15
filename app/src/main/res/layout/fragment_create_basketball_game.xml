@@ -10,7 +10,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.5"
         android:text="Maç Oluşturma"
         android:textSize="20sp"
         android:textAllCaps="true"
@@ -19,25 +18,24 @@
         android:padding="20dp"/>
 
     <ImageView
+        android:id="@+id/selectGameType"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_weight="2.5"
         android:scaleType="centerCrop"
         android:layout_margin="5dp"
-        android:padding="5dp"
+        android:padding="20dp"
         android:src="@mipmap/ic_launcher"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1.5"
         android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="1.25"
             android:orientation="vertical">
 
             <TextView
@@ -50,6 +48,7 @@
                 android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/organizer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="esatsatan91@gmail.com"
@@ -63,7 +62,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="1.25"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
@@ -94,7 +93,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1.5"
         android:orientation="horizontal">
 
         <TextView
@@ -135,10 +133,10 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/createBasketballButton"
         android:layout_width="match_parent"
-        android:layout_weight="2"
         android:layout_marginBottom="5dp"
+        android:padding="10dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:text="OLUŞTUR"
         android:textStyle="bold"
         android:layout_marginStart="5dp"
